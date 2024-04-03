@@ -31,7 +31,18 @@ function findHighestPrice(cars) {
   return expensive_car;
 }
 
+function getAveragePrice(cars) {
+  let num_cars = cars.length;
+  let total_cost = 0;
+  for (let i = 0; i < cars.length; i++) {
+    let car = cars[i];
+    total_cost += car["price"];
+  }
+  return total_cost / num_cars;
+}
+
 console.log(cars);
 
 console.log(findOldestCar(cars));
 console.log(findHighestPrice(cars));
+console.log(getAveragePrice(cars));
