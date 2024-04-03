@@ -15,9 +15,23 @@ function findOldestCar(cars) {
       oldest_car = car;
     }
   }
-  return (oldest_car);
+  return oldest_car;
+}
+
+function findHighestPrice(cars) {
+  let max_price = -1;
+  let expensive_car = cars[0];
+  for (let i = 0; i < cars.length; i++) {
+    let car = cars[i];
+    if (car["price"] > max_price || max_price === -1) {
+      max_price = car["price"];
+      expensive_car = car;
+    }
+  }
+  return expensive_car;
 }
 
 console.log(cars);
 
 console.log(findOldestCar(cars));
+console.log(findHighestPrice(cars));
